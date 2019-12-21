@@ -1,0 +1,16 @@
+table {
+    width: 100px;
+    font-size:31px;
+width:100%;
+}
+table, th, td {
+border: 1px solid black;
+}
+th {
+background-color: #e80000;
+}
+td {
+text-align: center;
+background-color:#19da13;
+}
+
