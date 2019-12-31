@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+.wish{
+    position: absolute;
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 50px;
+    font-size: 3vw;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 3px;
+}
+p{
+    text-decoration: underline;
+    text-align: right;
+    margin-right: 30px;
+}
+.wrapper {
+    width:100vw;
+    height:100vh;
+    background: radial-gradient(farthest-corner at 30vw 20vh,#000000 1%,#2f00ff 100%);
+}
+$s1:"";
+$s2:"";
+$s3:"";
+@for $i from 1 through 400 {
+    $s1: $s1 + random(1000)*0.1vw + " " + random(1000)*0.1vh + " " + 0 + " " + random(50)*-0.01rem + rgb(random(255), random(255), random(255));
+    $s2: $s2 + random(1000)*0.1vw + " " + random(1000)*0.1vh + " " + 0 + " " + random(50)*-0.01rem + rgb(random(255), random(255), random(255));
+    $s3: $s3 + random(1000)*0.1vw + " " + random(1000)*0.1vh + " " + 0 + " " + random(50)*-0.01rem + rgb(random(255), random(255), random(255));
+    @if $i < 400 {
+        $s1: $s1 + ",";
+        $s2: $s2 + ",";
+        $s3: $s3 + ",";
+    }
+}
+.snow {
+    border-radius: 50%;
+    opacity: 0.8;
+    position: absolute;
+    bottom: -100vh;
+    animation-name: fall;
+    animation-timing-function: cubic-bezier(0.49, 0.21, 0, 0.98);
+    animation-iteration-count: infinite;
+}
+.layer1 {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter:blur(1.5px);
+    box-shadow: #{$s1};
+    animation-duration: 5s;
+}
+.layer1.a {
+    animation-delay: -2s;
+}
+.layer2 {
+    width: 1.2rem;
+    height: 1.2rem;
+    filter:blur(3px);
+    box-shadow: #{$s2};
+    animation-duration: 4s;
+}
+.layer2.a {
+    animation-delay: -2s;
+}
+.layer3 {
+    width: 0.8rem;
+    height: 0.8rem;
+    filter:blur(6px);
+    box-shadow: #{$s3};
+    animation-duration: 5s;
+}
+.layer3.a {
+    animation-delay: -3s;
+}
+@keyframes fall {
+    100% {transform: translateY(-300vh); }
+}
