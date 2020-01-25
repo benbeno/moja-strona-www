@@ -3,7 +3,10 @@ const content = document.querySelector('.content');
 
 //Odpowiedzi
 const siema = ['Siema siemanko.', 'hej', 'elo'];
-
+const jaksienazywasz = ['Nazywam sie Nebek.','niech gówno cie to obchodzi'];
+const corobisz = ['z wielką chęcią słucham ciebie'];
+const jakabedziepogoda = ['będzie lało.','możesz gdzieś wyjść pogoda bedzie spoko'];
+const a = ['kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuurde nic nie rozumiem.'];
 //
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -33,7 +36,20 @@ function readOutLoud(message){
         const finalText = siema[Math.floor(Math.random() * siema.length)];
         speech.text = finalText;
     }
-
+    if(message.includes('nazywasz')){
+        const finalText = jaksienazywasz[Math.floor(Math.random() * jaksienazywasz.length)];
+        speech.text = finalText;
+    }
+    if(message.includes('robisz')){
+        const finalText = corobisz[Math.floor(Math.random() * corobisz.length)];
+        speech.text = finalText;
+    }
+   
+    if(message == ('a')){
+        const finalText = a[Math.floor(Math.random() * a.length)];
+        speech.text = finalText;
+    }
+    
     //
 
     speech.volume = 1;
