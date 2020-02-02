@@ -7,6 +7,7 @@ const jaksienazywasz = ['Nazywam sie Nebek.','niech gówno cie to obchodzi'];
 const corobisz = ['z wielką chęcią słucham ciebie'];
 const jakabedziepogoda = ['będzie lało.','możesz gdzieś wyjść pogoda bedzie spoko'];
 const a = ['kuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuurde nic nie rozumiem.'];
+const czylubiszgrac = ['bardzo lubie grać sprawia mi to przyjemność.'];
 //
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -45,8 +46,9 @@ function readOutLoud(message){
         speech.text = finalText;
     }
    
-    if(message == ('a')){
-        const finalText = a[Math.floor(Math.random() * a.length)];
+  
+    if(message == ('czy lubisz grać')){
+        const finalText = czylubiszgrac[Math.floor(Math.random() * czylubiszgrac.length)];
         speech.text = finalText;
     }
     
